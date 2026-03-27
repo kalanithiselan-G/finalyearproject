@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Audio Watermarking Anti-Piracy System
 
 A dynamic audio watermarking system for protecting multimedia content from piracy. The system embeds unique user-specific watermarks into audio files and can detect them for forensic tracking.
@@ -130,3 +131,6 @@ The system implements a DCT-based watermarking algorithm:
 ## License
 
 MIT
+=======
+# finalyearproject
+>>>>>>> 309041b62b75f6ac1f1d950cebdfa436b535ef25
