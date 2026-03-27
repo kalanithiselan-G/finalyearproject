@@ -1,29 +1,68 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { AuthProvider } from './components/AuthContext';
-import ProtectedRoute from './components/ProtectedRoute';
-import Login from './pages/Login';
-import Register from './pages/Register';
-import Dashboard from './pages/Dashboard';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import ProtectedRoute from "./Navbar/ProtectedRoute";
+import SonicNavbar from "./Navbar/Navbar.jsx";
+
+import LandingPage from "./Home.jsx";
+import LoginPage from "./form/Login.jsx";
+import RegisterPage from "./form/Register.jsx";
+
+import EmbedPage from "./watermark/WaterEB.jsx";
+import DetectPage from "./watermark/WaterDT.jsx";
+import HistoryPage from "./history/History.jsx";
+import ProfilePage from "./userprofile/Profile.jsx";
+
+import { AuthProvider } from "./context/AuthContext";
 
 function App() {
   return (
-    <BrowserRouter>
-      <AuthProvider>
+    <AuthProvider>
+      <BrowserRouter>
+        <SonicNavbar />
+
         <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+
           <Route
-            path="/dashboard"
+            path="/embed"
             element={
               <ProtectedRoute>
-                <Dashboard />
+                <EmbedPage />
               </ProtectedRoute>
             }
           />
-          <Route path="/" element={<Navigate to="/dashboard" replace />} />
+
+          <Route
+            path="/detect"
+            element={
+              <ProtectedRoute>
+                <DetectPage />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/history"
+            element={
+              <ProtectedRoute>
+                <HistoryPage />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/profile"
+            element={
+              <ProtectedRoute>
+                <ProfilePage />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
-      </AuthProvider>
-    </BrowserRouter>
+      </BrowserRouter>
+    </AuthProvider>
   );
 }
 

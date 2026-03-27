@@ -32,9 +32,11 @@ class WatermarkRecord(BaseModel):
     original_filename: str
     watermarked_filename: str
 
+
 class WatermarkDetectionResult(BaseModel):
     detected: bool
-    watermark_id: Optional[str] = None
-    user_email: Optional[str] = None
-    content_id: Optional[str] = None
-    timestamp: Optional[datetime] = None
+    watermark_id: str | None = None
+    user_email: str | None = None
+    user_full_name: str | None = None
+    content_id: str | None = None
+    timestamp: datetime | None = None

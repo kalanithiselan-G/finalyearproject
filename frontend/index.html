@@ -1,11 +1,171 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="dark">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Audio Watermarking System</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Sonic Cipher | The Silent Sentinel</title>
+
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind config with full color scheme -->
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              error: "#ffb4ab",
+              "secondary-container": "#568dff",
+              "surface-container-lowest": "#0a0e17",
+              "on-tertiary-fixed": "#320047",
+              "primary-fixed-dim": "#00dbe7",
+              "primary-fixed": "#74f5ff",
+              "surface-container-low": "#181b25",
+              "surface-dim": "#0f131c",
+              "on-primary-fixed-variant": "#004f54",
+              "on-surface-variant": "#b9cacb",
+              "on-secondary-fixed-variant": "#00429c",
+              "on-secondary-fixed": "#001945",
+              "tertiary-fixed-dim": "#ebb2ff",
+              "surface-variant": "#31353f",
+              primary: "#e1fdff",
+              "outline-variant": "#3a494b",
+              "on-error": "#690005",
+              "on-error-container": "#ffdad6",
+              "error-container": "#93000a",
+              "on-primary-container": "#006a71",
+              "surface-container-highest": "#31353f",
+              "on-secondary-container": "#002661",
+              background: "#0f131c",
+              "tertiary-container": "#f5ceff",
+              "surface-container": "#1c1f29",
+              surface: "#0f131c",
+              "on-surface": "#dfe2ef",
+              "primary-container": "#00f2ff",
+              tertiary: "#fff5fc",
+              "surface-bright": "#353943",
+              "inverse-surface": "#dfe2ef",
+              "on-tertiary": "#520071",
+              "inverse-primary": "#00696f",
+              "surface-tint": "#00dbe7",
+              "inverse-on-surface": "#2c303a",
+              "on-background": "#dfe2ef",
+              secondary: "#b0c6ff",
+              "secondary-fixed": "#d9e2ff",
+              "on-primary": "#00363a",
+              "tertiary-fixed": "#f8d8ff",
+              "secondary-fixed-dim": "#b0c6ff",
+              "on-tertiary-fixed-variant": "#74009f",
+              outline: "#849495",
+              "on-secondary": "#002d6f",
+              "on-primary-fixed": "#002022",
+              "on-tertiary-container": "#9b00d2",
+              "surface-container-high": "#262a34",
+
+              /* New scheme */
+              brand: {
+                light: "#7ff7ff",
+                DEFAULT: "#00e0ff",
+                dark: "#0092b3",
+              },
+              accent: "#ff7a00",
+            },
+            fontFamily: {
+              headline: ["Space Grotesk"],
+              body: ["Inter"],
+              label: ["Inter"],
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+      .glass-panel {
+        background: rgba(15, 19, 28, 0.6);
+        backdrop-filter: blur(20px);
+      }
+      .hero-gradient {
+        background: radial-gradient(
+          circle at 50% 50%,
+          rgba(0, 242, 255, 0.08) 0%,
+          rgba(15, 19, 28, 0) 70%
+        );
+      }
+      .glow-border {
+        border-top: 1px solid rgba(0, 242, 255, 0.2);
+      }
+      .backdrop-blur-20px {
+        backdrop-filter: blur(20px);
+      }
+      .ghost-border {
+        border: 0.5px solid rgba(225, 253, 255, 0.15);
+      }
+      .ghost-border-top {
+        border-top: 0.5px solid rgba(225, 253, 255, 0.15);
+      }
+      .primary-gradient {
+        background: linear-gradient(45deg, #e1fdff 0%, #00f2ff 100%);
+      }
+      .timeline-gradient {
+        background: linear-gradient(180deg, #00f2ff 0%, #f5ceff 100%);
+      }
+      .waveform-bar {
+        animation: pulse 1.5s ease-in-out infinite;
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          height: 20%;
+          opacity: 0.5;
+        }
+        50% {
+          height: 100%;
+          opacity: 1;
+        }
+      }
+      @keyframes scan {
+        0% {
+          left: 0;
+          opacity: 0;
+        }
+        5% {
+          opacity: 1;
+        }
+        95% {
+          opacity: 1;
+        }
+        100% {
+          left: 100%;
+          opacity: 0;
+        }
+      }
+    </style>
   </head>
-  <body>
+  <body class="bg-background text-on-surface font-body">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
